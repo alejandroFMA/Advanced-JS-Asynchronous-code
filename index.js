@@ -1,21 +1,15 @@
 //RESUELVE TUS EJERCICIOS AQUI
-//RESUELVE TUS EJERCICIOS AQUI
 //EJERCICIO 1
-function getAllBreeds () {
-    
 
+function getAllBreeds () {
     return fetch("https://dog.ceo/api/breeds/list/all")
             .then(response => response.json())
             .then(breed => Object.keys(breed.message))
-            .catch(function(error){
-                    console.log(error)
-                })
-    }
+}
     
     
     //EJERCICIO 2
-    function getRandomDog() {
-        
+    function getRandomDog() {    
         return fetch("https://dog.ceo/api/breeds/image/random")
             .then(response => response.json())
             .then(breed => breed.message)
@@ -101,3 +95,6 @@ function getAllBreeds () {
     function fetchGithubUsers(userNames) {
   
     }
+
+
+
