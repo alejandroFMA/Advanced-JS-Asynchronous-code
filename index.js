@@ -63,8 +63,8 @@ function getAllBreeds () {
   
     function getAndPrintGitHubUserProfile(username) {
         return fetch(`https://api.github.com/users/${username}`)
-          .then((res) => res.json())
-          .then((res) => {
+          .then(res => res.json())
+          .then(res => {
             let img = res.avatar_url;
             let name = res.name;
             let repos = res.public_repos;
@@ -87,22 +87,20 @@ const body = document.querySelector("body"); //body porque no sabemos dónde met
 
 const usernameInput = document.createElement("input"); // se crea input de texto
 usernameInput.type = "text";
-usernameInput.id = "username";
 usernameInput.placeholder = "Username";
 
 const buscarBoton = document.createElement("button"); // se crea boton de busqueda
-buscarBoton.id = "search";
 buscarBoton.textContent = "Buscar";
 
 
 body.appendChild(usernameInput);
-body.appendChild(searchButton);
+body.appendChild(buscarBoton);
 
 
 searchButton.addEventListener("click", () => {
-    const username = usernameInput.value; //es el value del input de texto
+    let nombreUsuario = usernameInput.value; //es el value del input de texto
   
-    getAndPrintGitHubUserProfile(username); // ejecutamos la función
+    getAndPrintGitHubUserProfile(nombreUsuario); // ejecutamos la función
   });
   
   
